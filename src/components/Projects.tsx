@@ -1,3 +1,5 @@
+import ScrollReveal from "./ScrollReveal";
+
 const projects = [
   {
     title: "Unityゲーム作品",
@@ -19,50 +21,53 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-border">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-4xl font-bold tracking-tight mb-12">
-          Projects<span className="text-accent">.</span>
-        </h2>
+        <ScrollReveal>
+          <h2 className="text-4xl font-bold tracking-tight mb-12">
+            Projects<span className="text-accent">.</span>
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="bg-white rounded-xl border border-border p-6 sm:p-8 hover:border-accent/30 transition-colors group"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-sm font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
-                    >
-                      {t}
-                    </span>
-                  ))}
+          {projects.map((project, idx) => (
+            <ScrollReveal key={project.title} delay={idx * 150}>
+              <div className="project-card bg-white rounded-xl border border-border p-6 sm:p-8 hover:border-accent/30">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-sm font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+                <p className="text-base text-muted leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-base text-accent hover:underline"
+                  >
+                    GitHub で見る
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                )}
               </div>
-              <p className="text-base text-muted leading-relaxed mb-4">
-                {project.description}
-              </p>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-base text-accent hover:underline"
-                >
-                  GitHub で見る
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
-              )}
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <p className="text-sm text-muted mt-8">
-          ※ ゲーム作品のスクリーンショットや動画は準備中です。
-        </p>
+        <ScrollReveal delay={300}>
+          <p className="text-sm text-muted mt-8">
+            ※ ゲーム作品のスクリーンショットや動画は準備中です。
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );

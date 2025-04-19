@@ -1,7 +1,13 @@
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-16">
-      <div className="max-w-5xl mx-auto px-6 py-24 w-full">
+    <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
+      {/* Decorative background shapes */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/3 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-accent/20 rounded-full animate-float" />
+      <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-accent/15 rounded-full animate-float-slow" />
+
+      <div className="max-w-5xl mx-auto px-6 py-24 w-full relative hero-animate">
         <p className="text-accent font-mono text-base mb-4 tracking-wide">
           Hi, I&apos;m
         </p>
