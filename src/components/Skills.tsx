@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import { MoleculeStructure } from "./BioDecorations";
+import IllustrationFrame from "./IllustrationFrame";
 
 const skills = [
   {
@@ -25,7 +26,9 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 border-t border-border relative overflow-hidden">
-      <MoleculeStructure className="absolute -left-2 bottom-20 w-28 h-28 text-accent/30 animate-spin-slow hidden lg:block" />
+      <IllustrationFrame className="absolute -left-2 bottom-16 hidden lg:block animate-spin-slow">
+        <MoleculeStructure className="w-24 h-24 text-accent" />
+      </IllustrationFrame>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

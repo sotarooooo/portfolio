@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { Microbe } from "./BioDecorations";
+import IllustrationFrame from "./IllustrationFrame";
 
 const projects = [
   {
@@ -8,8 +9,8 @@ const projects = [
     tech: ["C#", "Unity"],
     description:
       "2年間のUnity開発で制作したゲーム作品。企画からデザイン、実装まで一貫して担当。ゲームロジックの設計やUI実装を通じて、オブジェクト指向設計の理解を深めました。",
-    image: "/images/microscope.jpg",
-    imageAlt: "Game development",
+    image: "/images/game.jpg",
+    imageAlt: "Game controller",
     link: null,
   },
   {
@@ -17,8 +18,8 @@ const projects = [
     tech: ["TypeScript", "Next.js", "Tailwind CSS"],
     description:
       "このサイトです。就活に向けて自分のスキルや経歴をまとめるために制作。Next.js と Tailwind CSS を使ったモダンなWeb開発を実践しています。",
-    image: "/images/hero-bio.jpg",
-    imageAlt: "Portfolio website",
+    image: "/images/code.jpg",
+    imageAlt: "Code editor on laptop",
     link: "https://github.com/sotarooooo/portfolio",
   },
 ];
@@ -26,7 +27,9 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-border relative overflow-hidden">
-      <Microbe className="absolute -left-2 top-32 w-24 h-24 text-accent/25 animate-float hidden lg:block" />
+      <IllustrationFrame className="absolute -left-2 top-28 hidden lg:block animate-float">
+        <Microbe className="w-20 h-20 text-accent" />
+      </IllustrationFrame>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

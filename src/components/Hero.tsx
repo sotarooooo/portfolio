@@ -1,14 +1,23 @@
 import Image from "next/image";
 import { DnaHelix, CellStructure, MoleculeStructure, Microbe } from "./BioDecorations";
+import IllustrationFrame from "./IllustrationFrame";
 
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      {/* Bio illustrations */}
-      <DnaHelix className="absolute right-16 top-28 w-20 h-48 text-accent/40 animate-float hidden lg:block" />
-      <CellStructure className="absolute right-1/4 bottom-24 w-36 h-36 text-accent/30 animate-float-slow hidden md:block" />
-      <MoleculeStructure className="absolute left-12 bottom-32 w-28 h-28 text-accent/30 animate-spin-slow hidden lg:block" />
-      <Microbe className="absolute right-24 top-1/2 w-20 h-20 text-accent/25 animate-float hidden md:block" />
+      {/* Framed bio illustrations */}
+      <IllustrationFrame className="absolute right-8 top-24 hidden lg:block animate-float">
+        <DnaHelix className="w-16 h-40 text-accent" />
+      </IllustrationFrame>
+      <IllustrationFrame className="absolute right-1/4 bottom-20 hidden md:block animate-float-slow">
+        <CellStructure className="w-28 h-28 text-accent" />
+      </IllustrationFrame>
+      <IllustrationFrame className="absolute left-8 bottom-28 hidden lg:block animate-spin-slow">
+        <MoleculeStructure className="w-24 h-24 text-accent" />
+      </IllustrationFrame>
+      <IllustrationFrame className="absolute right-20 top-1/2 hidden md:block animate-float">
+        <Microbe className="w-16 h-16 text-accent" />
+      </IllustrationFrame>
 
       <div className="max-w-5xl mx-auto px-6 py-24 w-full relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -43,28 +52,28 @@ export default function Hero() {
 
           {/* Hero image collage */}
           <div className="relative hidden lg:block h-96">
-            <div className="absolute top-0 right-0 w-56 h-56 rounded-2xl overflow-hidden shadow-lg border-2 border-white/60 rotate-3">
+            <div className="absolute top-0 right-0 w-56 h-56 rounded-2xl overflow-hidden shadow-lg border-2 border-accent/20 rotate-3">
               <Image
-                src="/images/hero-bio.jpg"
-                alt="Laboratory beakers"
+                src="/images/game.jpg"
+                alt="Game controller"
                 fill
                 className="object-cover"
                 sizes="224px"
               />
             </div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-white/60 -rotate-2">
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-accent/20 -rotate-2">
               <Image
-                src="/images/microscope.jpg"
-                alt="Fluorescent cell imaging"
+                src="/images/code.jpg"
+                alt="Code editor"
                 fill
                 className="object-cover"
                 sizes="192px"
               />
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-accent/20">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-accent/30">
               <Image
                 src="/images/cells.jpg"
-                alt="Pipetting in laboratory"
+                alt="Laboratory research"
                 fill
                 className="object-cover"
                 sizes="160px"

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { CellStructure } from "./BioDecorations";
+import IllustrationFrame from "./IllustrationFrame";
 
 export default function About() {
   return (
     <section id="about" className="py-24 border-t border-border relative overflow-hidden">
-      <CellStructure className="absolute -right-4 top-12 w-40 h-40 text-accent/20 animate-float-slow hidden lg:block" />
+      <IllustrationFrame className="absolute -right-2 top-16 hidden lg:block animate-float-slow">
+        <CellStructure className="w-32 h-32 text-accent" />
+      </IllustrationFrame>
 
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
@@ -17,11 +20,11 @@ export default function About() {
         <ScrollReveal delay={100}>
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 space-y-6">
-              {/* Photo with lab image */}
+              {/* Bio-themed photo */}
               <div className="w-full h-48 rounded-2xl overflow-hidden border-2 border-accent/15 shadow-sm mb-6 relative">
                 <Image
-                  src="/images/lab.jpg"
-                  alt="Research laboratory"
+                  src="/images/cells.jpg"
+                  alt="Laboratory research"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 60vw"
