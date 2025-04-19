@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f7;
+  --background: #f7faf8;
   --foreground: #1a1a1a;
-  --accent: #2563eb;
-  --accent-light: #dbeafe;
-  --muted: #6b7280;
-  --border: #e5e5e5;
+  --accent: #0d9668;
+  --accent-light: #d1fae5;
+  --muted: #5f7268;
+  --border: #d4e4da;
 }
 
 @theme inline {
@@ -24,9 +24,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.09) 0%, transparent 40%),
-    radial-gradient(circle at 60% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 45%);
+    radial-gradient(circle at 15% 50%, rgba(13, 150, 104, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(13, 150, 104, 0.07) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
@@ -79,13 +79,27 @@ html {
   50% { transform: translateY(-12px); }
 }
 
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .animate-float-slow {
-  animation: float 8s ease-in-out infinite;
+  animation: floatSlow 8s ease-in-out infinite;
   animation-delay: 1s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 
 /* Skill card hover lift */
@@ -95,7 +109,7 @@ html {
 
 .skill-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(13, 150, 104, 0.08);
 }
 
 /* Project card hover */
@@ -105,5 +119,5 @@ html {
 
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px rgba(13, 150, 104, 0.1);
 }

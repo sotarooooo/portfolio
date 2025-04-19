@@ -1,4 +1,5 @@
 import ScrollReveal from "./ScrollReveal";
+import { DnaHelix } from "./BioDecorations";
 
 const experiences = [
   {
@@ -19,8 +20,9 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t border-border">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="experience" className="py-24 border-t border-border relative overflow-hidden">
+      <DnaHelix className="absolute -right-4 top-16 w-12 h-32 text-accent/10 animate-float hidden lg:block" />
+      <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">
             Experience<span className="text-accent">.</span>
