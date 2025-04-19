@@ -10,8 +10,8 @@ export default function About() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          <ScrollReveal delay={100}>
+        <ScrollReveal delay={100}>
+          <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 space-y-5 text-muted leading-relaxed text-lg">
               <p>
                 ゲーム開発をきっかけにプログラミングを始め、C#でのUnity開発を2年間続けてきました。
@@ -27,9 +27,7 @@ export default function About() {
                 ユーザーが触れるプロダクトに関わる仕事を目指しています。
               </p>
             </div>
-          </ScrollReveal>
 
-          <ScrollReveal delay={200}>
             <div className="md:col-span-2">
               <div className="bg-white rounded-xl border border-border p-6 space-y-4">
                 <h3 className="text-base font-semibold uppercase tracking-widest text-accent">
@@ -53,8 +51,8 @@ export default function About() {
                 </dl>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
