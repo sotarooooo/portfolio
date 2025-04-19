@@ -25,7 +25,7 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 border-t border-border relative overflow-hidden">
-      <MoleculeStructure className="absolute -left-6 bottom-20 w-24 h-24 text-accent/10 animate-spin-slow hidden lg:block" />
+      <MoleculeStructure className="absolute -left-2 bottom-20 w-28 h-28 text-accent/30 animate-spin-slow hidden lg:block" />
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">
@@ -44,7 +44,7 @@ export default function Skills() {
                   {group.items.map((skill) => (
                     <div
                       key={skill.name}
-                      className="skill-card bg-white/80 backdrop-blur-sm rounded-lg border border-border p-4 hover:border-accent/30"
+                      className="skill-card bg-white/90 backdrop-blur-sm rounded-lg border-2 border-accent/10 p-4 hover:border-accent/30"
                     >
                       <div className="flex items-center justify-between mb-1">
                         <span className="font-medium text-base">{skill.name}</span>

@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7faf8;
+  --background: #f0f7f2;
   --foreground: #1a1a1a;
-  --accent: #0d9668;
-  --accent-light: #d1fae5;
-  --muted: #5f7268;
-  --border: #d4e4da;
+  --accent: #059669;
+  --accent-dark: #047857;
+  --accent-light: #a7f3d0;
+  --muted: #4b6355;
+  --border: #b8d4c2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
   --color-accent-light: var(--accent-light);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -24,9 +26,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(13, 150, 104, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 85%, rgba(13, 150, 104, 0.07) 0%, transparent 45%);
+    radial-gradient(circle at 15% 50%, rgba(5, 150, 105, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(5, 150, 105, 0.12) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
@@ -109,7 +111,7 @@ html {
 
 .skill-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(13, 150, 104, 0.08);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.15);
 }
 
 /* Project card hover */
@@ -119,5 +121,5 @@ html {
 
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(13, 150, 104, 0.1);
+  box-shadow: 0 12px 32px rgba(5, 150, 105, 0.18);
 }
