@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-border">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold tracking-tight mb-12">
+        <h2 className="text-4xl font-bold tracking-tight mb-12">
           Projects<span className="text-accent">.</span>
         </h2>
 
@@ -30,19 +30,19 @@ export default function Projects() {
               className="bg-white rounded-xl border border-border p-6 sm:p-8 hover:border-accent/30 transition-colors group"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <h3 className="text-xl font-semibold">{project.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-xs font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
+                      className="text-sm font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
-              <p className="text-sm text-muted leading-relaxed mb-4">
+              <p className="text-base text-muted leading-relaxed mb-4">
                 {project.description}
               </p>
               {project.link && (
@@ -50,7 +50,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+                  className="inline-flex items-center gap-1.5 text-base text-accent hover:underline"
                 >
                   GitHub で見る
                   <span aria-hidden="true">&rarr;</span>

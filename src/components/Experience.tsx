@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 border-t border-border">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold tracking-tight mb-12">
+        <h2 className="text-4xl font-bold tracking-tight mb-12">
           Experience<span className="text-accent">.</span>
         </h2>
 
@@ -31,20 +31,20 @@ export default function Experience() {
               <div key={exp.period} className="sm:pl-10 relative">
                 <div className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background hidden sm:block" />
                 <div>
-                  <span className="text-xs font-mono text-accent uppercase tracking-wider">
+                  <span className="text-sm font-mono text-accent uppercase tracking-wider">
                     {exp.period}
                   </span>
-                  <h3 className="text-lg font-semibold mt-1 mb-2">
+                  <h3 className="text-xl font-semibold mt-1 mb-2">
                     {exp.role}
                   </h3>
-                  <p className="text-sm text-muted leading-relaxed mb-3">
+                  <p className="text-base text-muted leading-relaxed mb-3">
                     {exp.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {exp.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="text-xs font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
+                        className="text-sm font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
                       >
                         {skill}
                       </span>

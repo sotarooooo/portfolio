@@ -2,12 +2,12 @@ export default function About() {
   return (
     <section id="about" className="py-24 border-t border-border">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold tracking-tight mb-12">
+        <h2 className="text-4xl font-bold tracking-tight mb-12">
           About<span className="text-accent">.</span>
         </h2>
 
         <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-3 space-y-5 text-muted leading-relaxed">
+          <div className="md:col-span-3 space-y-5 text-muted leading-relaxed text-lg">
             <p>
               ゲーム開発をきっかけにプログラミングを始め、C#でのUnity開発を2年間続けてきました。
               その後、JavaScriptによるWeb開発やPythonでのデータ分析・アプリ開発にも取り組み、
@@ -25,10 +25,10 @@ export default function About() {
 
           <div className="md:col-span-2">
             <div className="bg-white rounded-xl border border-border p-6 space-y-4">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">
+              <h3 className="text-base font-semibold uppercase tracking-widest text-accent">
                 Profile
               </h3>
-              <dl className="space-y-3 text-sm">
+              <dl className="space-y-3 text-base">
                 <div>
                   <dt className="text-muted">名前</dt>
                   <dd className="font-medium mt-0.5">Sotaro</dd>
