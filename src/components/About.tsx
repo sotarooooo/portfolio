@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { CellStructure } from "./BioDecorations";
 
@@ -16,12 +17,19 @@ export default function About() {
         <ScrollReveal delay={100}>
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 space-y-6">
-              {/* Profile photo */}
-              <div className="w-40 h-40 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-light/50 border-2 border-accent/20 flex items-center justify-center overflow-hidden mb-6">
-                {/* TODO: Replace with actual photo: <Image src="/profile.jpg" ... /> */}
-                <svg className="w-16 h-16 text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
+              {/* Photo with lab image */}
+              <div className="w-full h-48 rounded-2xl overflow-hidden border-2 border-accent/15 shadow-sm mb-6 relative">
+                <Image
+                  src="/images/lab.jpg"
+                  alt="Research laboratory"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
+                <p className="absolute bottom-3 left-4 text-white text-sm font-medium">
+                  Bio × Engineering
+                </p>
               </div>
 
               <div className="space-y-5 text-muted leading-relaxed text-lg">
