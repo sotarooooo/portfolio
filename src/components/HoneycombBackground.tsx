@@ -1,9 +1,33 @@
 import { DnaHelix, CellStructure, MoleculeStructure, Microbe } from "./BioDecorations";
 
+const HEX_W = 144;
+const HEX_H = 249.6;
+const ROW1_CX = 72;
+const ROW1_CY = 67.2;
+const ROW2_CX = 144;
+const ROW2_CY = 192;
+
+function gridPos(col: number, row: number) {
+  const isOddRow = row % 2 !== 0;
+  const x = col * HEX_W + (isOddRow ? ROW2_CX : ROW1_CX);
+  const y = Math.floor(row / 2) * HEX_H + (isOddRow ? ROW2_CY : ROW1_CY);
+  return { x, y };
+}
+
+const illustrations = [
+  { col: 0, row: 1, el: <DnaHelix className="w-10 h-24 text-accent/50" /> },
+  { col: 8, row: 0, el: <CellStructure className="w-16 h-16 text-accent/50" /> },
+  { col: 1, row: 3, el: <MoleculeStructure className="w-14 h-14 text-accent/45" /> },
+  { col: 9, row: 2, el: <Microbe className="w-12 h-12 text-accent/50" /> },
+  { col: 5, row: 5, el: <DnaHelix className="w-8 h-18 text-accent/35" /> },
+  { col: 10, row: 4, el: <CellStructure className="w-12 h-12 text-accent/35" /> },
+  { col: 2, row: 6, el: <Microbe className="w-10 h-10 text-accent/30" /> },
+  { col: 7, row: 7, el: <MoleculeStructure className="w-12 h-12 text-accent/30" /> },
+];
+
 export default function HoneycombBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Honeycomb SVG pattern */}
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
@@ -69,90 +93,23 @@ export default function HoneycombBackground() {
         />
       </svg>
 
-      {/* Bio illustrations fixed inside hexagon cells */}
-      <div className="absolute top-[8%] right-[10%]">
-        <IllustrationHex>
-          <DnaHelix className="w-10 h-28 text-accent/60" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute top-[35%] left-[5%]">
-        <IllustrationHex>
-          <CellStructure className="w-16 h-16 text-accent/60" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute top-[60%] right-[8%]">
-        <IllustrationHex>
-          <MoleculeStructure className="w-14 h-14 text-accent/60" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute top-[15%] left-[15%]">
-        <IllustrationHex>
-          <Microbe className="w-12 h-12 text-accent/60" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute bottom-[15%] left-[12%]">
-        <IllustrationHex>
-          <DnaHelix className="w-8 h-20 text-accent/40" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute bottom-[10%] right-[15%]">
-        <IllustrationHex>
-          <CellStructure className="w-14 h-14 text-accent/40" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute top-[50%] left-[45%]">
-        <IllustrationHex size="sm">
-          <Microbe className="w-8 h-8 text-accent/30" />
-        </IllustrationHex>
-      </div>
-      <div className="absolute top-[80%] left-[35%]">
-        <IllustrationHex size="sm">
-          <MoleculeStructure className="w-10 h-10 text-accent/35" />
-        </IllustrationHex>
-      </div>
+      {/* Illustrations snapped to honeycomb grid centers */}
+      {illustrations.map((item, i) => {
+        const pos = gridPos(item.col, item.row);
+        return (
+          <div
+            key={i}
+            className="absolute flex items-center justify-center"
+            style={{
+              left: pos.x,
+              top: pos.y,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            {item.el}
+          </div>
+        );
+      })}
     </div>
   );
-}
-
-function IllustrationHex({
-  children,
-  size = "md",
-}: {
-  children: React.ReactNode;
-  size?: "sm" | "md";
-}) {
-  const dim = size === "sm" ? 80 : 110;
-  const r = dim / 2 - 2;
-  const cx = dim / 2;
-  const cy = dim / 2;
-  const points = hexPoints(cx, cy, r);
-
-  return (
-    <div className="relative" style={{ width: dim, height: dim }}>
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox={`0 0 ${dim} ${dim}`}
-        fill="none"
-      >
-        <polygon points={points} fill="white" opacity="0.15" />
-        <polygon
-          points={points}
-          stroke="#b0bec5"
-          strokeWidth="1.5"
-          fill="none"
-          opacity="0.5"
-        />
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function hexPoints(cx: number, cy: number, r: number): string {
-  return Array.from({ length: 6 }, (_, i) => {
-    const angle = (Math.PI / 3) * i - Math.PI / 2;
-    return `${(cx + r * Math.cos(angle)).toFixed(1)},${(cy + r * Math.sin(angle)).toFixed(1)}`;
-  }).join(" ");
 }
