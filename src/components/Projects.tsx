@@ -1,7 +1,5 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
-import { Microbe } from "./BioDecorations";
-import IllustrationFrame from "./IllustrationFrame";
 
 const projects = [
   {
@@ -27,11 +25,6 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="absolute -left-2 top-28 hidden lg:block animate-float">
-        <IllustrationFrame size="md">
-          <Microbe className="w-16 h-16 text-accent" />
-        </IllustrationFrame>
-      </div>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

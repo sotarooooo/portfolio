@@ -1,17 +1,9 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
-import { CellStructure } from "./BioDecorations";
-import IllustrationFrame from "./IllustrationFrame";
 
 export default function About() {
   return (
     <section id="about" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="absolute -right-2 top-16 hidden lg:block animate-float-slow">
-        <IllustrationFrame size="lg">
-          <CellStructure className="w-24 h-24 text-accent" />
-        </IllustrationFrame>
-      </div>
-
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

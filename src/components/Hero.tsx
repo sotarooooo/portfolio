@@ -1,32 +1,8 @@
 import Image from "next/image";
-import { DnaHelix, CellStructure, MoleculeStructure, Microbe } from "./BioDecorations";
-import IllustrationFrame from "./IllustrationFrame";
 
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      {/* Hexagonal framed bio illustrations */}
-      <div className="absolute right-6 top-24 hidden lg:block animate-float">
-        <IllustrationFrame size="lg">
-          <DnaHelix className="w-14 h-36 text-accent" />
-        </IllustrationFrame>
-      </div>
-      <div className="absolute right-1/4 bottom-16 hidden md:block animate-float-slow">
-        <IllustrationFrame size="lg">
-          <CellStructure className="w-24 h-24 text-accent" />
-        </IllustrationFrame>
-      </div>
-      <div className="absolute left-6 bottom-24 hidden lg:block animate-spin-slow">
-        <IllustrationFrame size="md">
-          <MoleculeStructure className="w-20 h-20 text-accent" />
-        </IllustrationFrame>
-      </div>
-      <div className="absolute right-16 top-1/2 hidden md:block animate-float">
-        <IllustrationFrame size="sm">
-          <Microbe className="w-14 h-14 text-accent" />
-        </IllustrationFrame>
-      </div>
-
       <div className="max-w-5xl mx-auto px-6 py-24 w-full relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="hero-animate">

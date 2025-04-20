@@ -1,6 +1,4 @@
 import ScrollReveal from "./ScrollReveal";
-import { DnaHelix } from "./BioDecorations";
-import IllustrationFrame from "./IllustrationFrame";
 
 const experiences = [
   {
@@ -22,11 +20,6 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="absolute right-4 top-16 hidden lg:block animate-float">
-        <IllustrationFrame size="lg">
-          <DnaHelix className="w-14 h-36 text-accent" />
-        </IllustrationFrame>
-      </div>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">
