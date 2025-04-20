@@ -27,9 +27,11 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-border relative overflow-hidden">
-      <IllustrationFrame className="absolute -left-2 top-28 hidden lg:block animate-float">
-        <Microbe className="w-20 h-20 text-accent" />
-      </IllustrationFrame>
+      <div className="absolute -left-2 top-28 hidden lg:block animate-float">
+        <IllustrationFrame size="md">
+          <Microbe className="w-16 h-16 text-accent" />
+        </IllustrationFrame>
+      </div>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

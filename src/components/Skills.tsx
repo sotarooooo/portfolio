@@ -26,9 +26,11 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 border-t border-border relative overflow-hidden">
-      <IllustrationFrame className="absolute -left-2 bottom-16 hidden lg:block animate-spin-slow">
-        <MoleculeStructure className="w-24 h-24 text-accent" />
-      </IllustrationFrame>
+      <div className="absolute -left-2 bottom-16 hidden lg:block animate-spin-slow">
+        <IllustrationFrame size="md">
+          <MoleculeStructure className="w-20 h-20 text-accent" />
+        </IllustrationFrame>
+      </div>
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
           <h2 className="text-4xl font-bold tracking-tight mb-12">

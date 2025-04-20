@@ -5,19 +5,27 @@ import IllustrationFrame from "./IllustrationFrame";
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      {/* Framed bio illustrations */}
-      <IllustrationFrame className="absolute right-8 top-24 hidden lg:block animate-float">
-        <DnaHelix className="w-16 h-40 text-accent" />
-      </IllustrationFrame>
-      <IllustrationFrame className="absolute right-1/4 bottom-20 hidden md:block animate-float-slow">
-        <CellStructure className="w-28 h-28 text-accent" />
-      </IllustrationFrame>
-      <IllustrationFrame className="absolute left-8 bottom-28 hidden lg:block animate-spin-slow">
-        <MoleculeStructure className="w-24 h-24 text-accent" />
-      </IllustrationFrame>
-      <IllustrationFrame className="absolute right-20 top-1/2 hidden md:block animate-float">
-        <Microbe className="w-16 h-16 text-accent" />
-      </IllustrationFrame>
+      {/* Hexagonal framed bio illustrations */}
+      <div className="absolute right-6 top-24 hidden lg:block animate-float">
+        <IllustrationFrame size="lg">
+          <DnaHelix className="w-14 h-36 text-accent" />
+        </IllustrationFrame>
+      </div>
+      <div className="absolute right-1/4 bottom-16 hidden md:block animate-float-slow">
+        <IllustrationFrame size="lg">
+          <CellStructure className="w-24 h-24 text-accent" />
+        </IllustrationFrame>
+      </div>
+      <div className="absolute left-6 bottom-24 hidden lg:block animate-spin-slow">
+        <IllustrationFrame size="md">
+          <MoleculeStructure className="w-20 h-20 text-accent" />
+        </IllustrationFrame>
+      </div>
+      <div className="absolute right-16 top-1/2 hidden md:block animate-float">
+        <IllustrationFrame size="sm">
+          <Microbe className="w-14 h-14 text-accent" />
+        </IllustrationFrame>
+      </div>
 
       <div className="max-w-5xl mx-auto px-6 py-24 w-full relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

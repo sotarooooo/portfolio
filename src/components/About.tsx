@@ -6,9 +6,11 @@ import IllustrationFrame from "./IllustrationFrame";
 export default function About() {
   return (
     <section id="about" className="py-24 border-t border-border relative overflow-hidden">
-      <IllustrationFrame className="absolute -right-2 top-16 hidden lg:block animate-float-slow">
-        <CellStructure className="w-32 h-32 text-accent" />
-      </IllustrationFrame>
+      <div className="absolute -right-2 top-16 hidden lg:block animate-float-slow">
+        <IllustrationFrame size="lg">
+          <CellStructure className="w-24 h-24 text-accent" />
+        </IllustrationFrame>
+      </div>
 
       <div className="max-w-5xl mx-auto px-6 relative">
         <ScrollReveal>
