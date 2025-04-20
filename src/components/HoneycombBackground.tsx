@@ -40,9 +40,9 @@ export default function HoneycombBackground() {
             <path
               d="M60 4 L105 30 L105 82 L60 108 L15 82 L15 30 Z"
               fill="none"
-              stroke="#c0c8cc"
-              strokeWidth="1.2"
-              opacity="0.35"
+              stroke="#a0adb5"
+              strokeWidth="2"
+              opacity="0.55"
             />
             <path
               d="M60 4 L105 30 L105 82 L60 108 L15 82 L15 30 Z"
@@ -52,9 +52,9 @@ export default function HoneycombBackground() {
             <path
               d="M120 108 L165 134 L165 186 L120 212 L75 186 L75 134 Z"
               fill="none"
-              stroke="#c0c8cc"
-              strokeWidth="1.2"
-              opacity="0.35"
+              stroke="#a0adb5"
+              strokeWidth="2"
+              opacity="0.55"
             />
             <path
               d="M120 108 L165 134 L165 186 L120 212 L75 186 L75 134 Z"
@@ -64,9 +64,9 @@ export default function HoneycombBackground() {
             <path
               d="M0 108 L45 134 L45 186 L0 212 L-45 186 L-45 134 Z"
               fill="none"
-              stroke="#c0c8cc"
-              strokeWidth="1.2"
-              opacity="0.35"
+              stroke="#a0adb5"
+              strokeWidth="2"
+              opacity="0.55"
             />
             <path
               d="M0 108 L45 134 L45 186 L0 212 L-45 186 L-45 134 Z"
