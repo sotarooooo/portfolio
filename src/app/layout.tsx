@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sotaro | Portfolio",
-  description: "Software Engineer Portfolio - JavaScript, C#, Python",
+  title: "Sotaro | Bio × Engineering Portfolio",
+  description: "バイオ × エンジニアリング。JavaScript, C#, Python を使ったソフトウェア開発ポートフォリオ。",
 };
 
 export default function RootLayout({

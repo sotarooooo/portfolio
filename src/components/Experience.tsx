@@ -19,38 +19,41 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 relative">
+    <section id="experience" className="py-24 relative overflow-hidden">
+      <div className="section-divider" />
+      <div className="max-w-5xl mx-auto px-6 pt-24 relative">
         <ScrollReveal>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">
+          <h2 className="text-4xl font-bold tracking-tight mb-4">
             Experience<span className="text-accent">.</span>
           </h2>
+          <p className="text-muted text-lg mb-12 max-w-xl">
+            これまでの経験。
+          </p>
         </ScrollReveal>
 
         <div className="relative">
-          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border hidden sm:block" />
+          <div className="absolute left-[7px] top-4 bottom-4 w-px bg-gradient-to-b from-accent/40 via-border to-transparent hidden sm:block" />
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {experiences.map((exp, idx) => (
               <ScrollReveal key={exp.period} delay={idx * 150}>
-                <div className="sm:pl-10 relative">
-                  <div className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background hidden sm:block" />
-                  <div>
-                    <span className="text-sm font-mono text-accent uppercase tracking-wider">
+                <div className="sm:pl-12 relative">
+                  <div className="hidden sm:block absolute left-0 top-1.5">
+                    <div className="timeline-dot" />
+                  </div>
+                  <div className="glass-card rounded-xl p-6">
+                    <span className="text-xs font-mono text-accent uppercase tracking-widest">
                       {exp.period}
                     </span>
-                    <h3 className="text-xl font-semibold mt-1 mb-2">
+                    <h3 className="text-lg font-semibold mt-2 mb-3">
                       {exp.role}
                     </h3>
-                    <p className="text-base text-muted leading-relaxed mb-3">
+                    <p className="text-sm text-muted leading-relaxed mb-4">
                       {exp.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="text-sm font-mono px-2.5 py-1 rounded-full bg-accent-light text-accent"
-                        >
+                        <span key={skill} className="tag-pill">
                           {skill}
                         </span>
                       ))}
