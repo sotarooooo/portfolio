@@ -1,4 +1,4 @@
-import { DnaHelix, CellStructure, MoleculeStructure, Microbe } from "./BioDecorations";
+import { DnaHelix, CellStructure, MoleculeStructure, Bacteria, Microscope, Flask, Atom, Leaf } from "./BioDecorations";
 
 const HEX_W = 144;
 const HEX_H = 249.6;
@@ -18,11 +18,13 @@ const illustrations = [
   { col: 0, row: 1, el: <DnaHelix className="w-10 h-24 text-accent/50" /> },
   { col: 8, row: 0, el: <CellStructure className="w-16 h-16 text-accent/50" /> },
   { col: 1, row: 3, el: <MoleculeStructure className="w-14 h-14 text-accent/45" /> },
-  { col: 9, row: 2, el: <Microbe className="w-12 h-12 text-accent/50" /> },
-  { col: 5, row: 5, el: <DnaHelix className="w-8 h-18 text-accent/35" /> },
-  { col: 10, row: 4, el: <CellStructure className="w-12 h-12 text-accent/35" /> },
-  { col: 2, row: 6, el: <Microbe className="w-10 h-10 text-accent/30" /> },
-  { col: 7, row: 7, el: <MoleculeStructure className="w-12 h-12 text-accent/30" /> },
+  { col: 9, row: 2, el: <Bacteria className="w-12 h-12 text-accent/50" /> },
+  { col: 5, row: 5, el: <Flask className="w-12 h-12 text-accent/40" /> },
+  { col: 10, row: 4, el: <Microscope className="w-12 h-14 text-accent/40" /> },
+  { col: 2, row: 6, el: <Atom className="w-14 h-14 text-accent/35" /> },
+  { col: 7, row: 7, el: <Leaf className="w-12 h-12 text-accent/35" /> },
+  { col: 4, row: 1, el: <Microscope className="w-10 h-12 text-accent/30" /> },
+  { col: 6, row: 3, el: <DnaHelix className="w-8 h-20 text-accent/35" /> },
 ];
 
 export default function HoneycombBackground() {
@@ -40,9 +42,9 @@ export default function HoneycombBackground() {
             <path
               d="M60 4 L105 30 L105 82 L60 108 L15 82 L15 30 Z"
               fill="none"
-              stroke="#a0adb5"
-              strokeWidth="2"
-              opacity="0.55"
+              stroke="#c0c8cc"
+              strokeWidth="1.2"
+              opacity="0.35"
             />
             <path
               d="M60 4 L105 30 L105 82 L60 108 L15 82 L15 30 Z"
@@ -52,9 +54,9 @@ export default function HoneycombBackground() {
             <path
               d="M120 108 L165 134 L165 186 L120 212 L75 186 L75 134 Z"
               fill="none"
-              stroke="#a0adb5"
-              strokeWidth="2"
-              opacity="0.55"
+              stroke="#c0c8cc"
+              strokeWidth="1.2"
+              opacity="0.35"
             />
             <path
               d="M120 108 L165 134 L165 186 L120 212 L75 186 L75 134 Z"
@@ -64,9 +66,9 @@ export default function HoneycombBackground() {
             <path
               d="M0 108 L45 134 L45 186 L0 212 L-45 186 L-45 134 Z"
               fill="none"
-              stroke="#a0adb5"
-              strokeWidth="2"
-              opacity="0.55"
+              stroke="#c0c8cc"
+              strokeWidth="1.2"
+              opacity="0.35"
             />
             <path
               d="M0 108 L45 134 L45 186 L0 212 L-45 186 L-45 134 Z"
