@@ -23,34 +23,41 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 relative">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="section-divider" />
+      <div className="max-w-5xl mx-auto px-6 pt-24 relative">
         <ScrollReveal>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">
+          <h2 className="text-4xl font-bold tracking-tight mb-4">
             Skills<span className="text-accent">.</span>
           </h2>
+          <p className="text-muted text-lg mb-12 max-w-xl">
+            これまでに身につけた技術スタック。
+          </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-10">
           {skills.map((group, groupIdx) => (
             <ScrollReveal key={group.category} delay={groupIdx * 150}>
               <div>
-                <h3 className="text-base font-semibold uppercase tracking-widest text-accent mb-6">
-                  {group.category}
-                </h3>
-                <div className="space-y-4">
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">
+                    {group.category}
+                  </h3>
+                </div>
+                <div className="space-y-3">
                   {group.items.map((skill) => (
                     <div
                       key={skill.name}
-                      className="skill-card bg-white/90 backdrop-blur-sm rounded-lg border-2 border-accent/10 p-4 hover:border-accent/30"
+                      className="glass-card rounded-xl p-4"
                     >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-medium text-base">{skill.name}</span>
-                        <span className="text-sm text-muted bg-background px-2 py-0.5 rounded-full">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="font-semibold text-sm">{skill.name}</span>
+                        <span className="tag-pill text-xs">
                           {skill.level}
                         </span>
                       </div>
-                      <p className="text-sm text-muted">{skill.description}</p>
+                      <p className="text-xs text-muted">{skill.description}</p>
                     </div>
                   ))}
                 </div>

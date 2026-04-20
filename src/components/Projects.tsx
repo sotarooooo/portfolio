@@ -24,55 +24,60 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 border-t border-border relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 relative">
+    <section id="projects" className="py-24 relative overflow-hidden">
+      <div className="section-divider" />
+      <div className="max-w-5xl mx-auto px-6 pt-24 relative">
         <ScrollReveal>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">
+          <h2 className="text-4xl font-bold tracking-tight mb-4">
             Projects<span className="text-accent">.</span>
           </h2>
+          <p className="text-muted text-lg mb-12 max-w-xl">
+            つくったもの。
+          </p>
         </ScrollReveal>
 
         <div className="grid gap-8">
           {projects.map((project, idx) => (
             <ScrollReveal key={project.title} delay={idx * 150}>
-              <div className="project-card bg-white/90 backdrop-blur-sm rounded-xl border-2 border-accent/10 overflow-hidden hover:border-accent/30">
-                <div className="h-48 sm:h-56 relative">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 800px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute bottom-4 left-6 flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-sm font-mono px-2.5 py-1 rounded-full bg-white/90 text-accent-dark font-medium"
-                      >
-                        {t}
-                      </span>
-                    ))}
+              <div className="glass-card rounded-2xl overflow-hidden project-card">
+                <div className="grid sm:grid-cols-5">
+                  <div className="sm:col-span-2 h-48 sm:h-auto relative">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 320px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 hidden sm:block" />
                   </div>
-                </div>
 
-                <div className="p-6 sm:p-8">
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                  <p className="text-base text-muted leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-base text-accent font-medium hover:underline"
-                    >
-                      GitHub で見る
-                      <span aria-hidden="true">&rarr;</span>
-                    </a>
-                  )}
+                  <div className="sm:col-span-3 p-6 sm:p-8 flex flex-col justify-center">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tech.map((t) => (
+                        <span key={t} className="tag-pill">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                    <p className="text-sm text-muted leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm text-accent font-semibold hover:text-accent-dark transition-colors group"
+                      >
+                        GitHub で見る
+                        <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
